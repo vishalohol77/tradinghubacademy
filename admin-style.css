@@ -1,277 +1,116 @@
-/* ====== admin-style.css (Complete: Parts 1–4 of 4) ====== */
+/* ========== admin-style.css ========== */
 
-/* ===== GLOBAL STYLES ===== */
+/* ===== GLOBAL RESET ===== */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0a0a0a url('https://i.imgur.com/sP3jFwT.png') repeat;
+  background: #0b0b0b url('https://i.imgur.com/sP3jFwT.png') repeat;
   background-size: contain;
   color: #fff;
 }
 
-a {
-  text-decoration: none;
-  color: #00ffcc;
-}
-h1, h2, h3 {
-  text-shadow: 1px 1px 4px #000;
-}
-
-/* ===== OFFER BAR ===== */
-.offer-bar {
-  background: linear-gradient(to right, #00ffcc, #0099ff);
-  color: #000;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 12px 0;
+/* ===== HEADINGS ===== */
+h1, h2 {
   text-align: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  animation: slidein 15s linear infinite;
-}
-@keyframes slidein {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-@keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-/* ===== LOGO SECTION ===== */
-.logo-section {
-  background: #111;
-  text-align: center;
-  padding: 20px 0;
-}
-.logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 0;
-  border: 2px solid #00ffcc;
-  object-fit: cover;
-  box-shadow: 0 0 10px rgba(0, 255, 200, 0.6);
-}
-
-/* ===== MAIN TITLE ===== */
-.main-title {
-  font-size: 2.5rem;
   color: #00ffcc;
+  text-shadow: 1px 1px 4px black;
   margin-top: 20px;
-  text-align: center;
 }
-.subtitle {
-  font-size: 1.2rem;
+label {
+  display: block;
+  margin: 10px 0 5px;
   color: #ccc;
-  text-align: center;
-  padding: 10px;
-}
-.blinking {
-  animation: blinkSoft 1.5s infinite ease-in-out;
-}
-@keyframes blinkSoft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
 }
 
-/* ===== INTRO SECTION ===== */
-.intro {
-  padding: 20px;
-  background-color: #111;
-  color: #eee;
-  border-left: 5px solid lime;
+/* ===== ADMIN PANEL SECTIONS ===== */
+.admin-section {
+  background: #111;
   margin: 20px;
-  border-radius: 10px;
-  box-shadow: inset 0 0 10px #0f0;
-}
-.warn {
-  color: red;
-  font-weight: bold;
-  animation: blink 1s infinite;
-}
-
-/* ===== 3D HIGHLIGHT SECTION ===== */
-.highlight-section {
-  background: #0a0a0a;
   padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.2);
 }
-.heading-3d {
-  font-size: 1.6rem;
-  color: #00ffcc;
-  text-align: center;
-  transform: perspective(1000px) rotateX(10deg);
-  margin-bottom: 20px;
-}
-.highlight-section ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-.highlight-section li {
-  margin: 8px 0;
+.admin-section textarea,
+.admin-section input[type="text"],
+.admin-section input[type="email"],
+.admin-section input[type="password"] {
+  width: 100%;
   padding: 10px;
   font-size: 1rem;
-  border-left: 3px solid #0f0;
-  background: #111;
-  border-radius: 6px;
-  color: #ccc;
-}
-
-/* ===== SYLLABUS SECTION ===== */
-.syllabus {
-  padding: 25px;
-  background: #111;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0ff;
-}
-.syllabus h2 {
-  text-align: center;
-  color: #0ff;
-  margin-bottom: 20px;
-}
-.syllabus ul {
-  list-style: none;
-  padding: 0;
-}
-.syllabus li {
-  padding: 10px;
-  border-bottom: 1px solid #333;
-  color: #eee;
-}
-.syllabus .highlight {
-  color: yellow;
-  font-weight: bold;
-}
-
-/* ===== GALLERY SECTION ===== */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-  background: #000;
-}
-.gallery img {
-  width: 200px;
-  height: auto;
-  border: 2px solid #0f0;
-  border-radius: 10px;
-  box-shadow: 0 0 10px lime;
-  transition: transform 0.3s ease;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* ===== TESTIMONIALS SECTION ===== */
-.testimonials {
-  padding: 20px;
-  background-color: #111;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,255,255,0.3);
-}
-.testimonials h2 {
-  text-align: center;
-  color: #0ff;
-}
-.testimonial-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
-}
-.testimonial-row img {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  object-fit: cover;
-  border: 2px solid #0ff;
-  box-shadow: 0 0 8px cyan;
-  transition: transform 0.3s ease;
-}
-.testimonial-row img:hover {
-  transform: scale(1.1);
-}
-
-/* ===== CALL TO ACTION SECTION ===== */
-.cta {
-  padding: 30px;
-  background: #222;
-  text-align: center;
-  border-radius: 10px;
-  margin: 20px auto;
-  box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
-}
-.cta h2 {
-  color: #00ffcc;
-  margin-bottom: 10px;
-}
-.cta p {
-  color: #ccc;
-  margin-bottom: 20px;
-}
-.cta a {
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 40px;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 0 10px #25D366;
-  transition: all 0.3s ease;
-}
-.cta a:hover {
-  background: #1ebd5a;
-  transform: scale(1.05);
-}
-
-/* ===== LOCATION BLOCK ===== */
-.map-block {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px;
-  text-align: center;
-  box-shadow: 0 0 10px #0ff;
-}
-.map-block h3 {
-  color: #00ffcc;
-  margin-bottom: 10px;
-}
-.map-block p {
-  color: #ccc;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-}
-.map-block iframe {
-  width: 90%;
-  height: 250px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
-/* ===== FOOTER ===== */
-.footer {
-  background: #000;
-  padding: 20px;
-  color: #aaa;
+/* ===== BUTTONS ===== */
+.admin-buttons {
   text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
+  margin: 30px 0;
+}
+.admin-buttons button {
+  background: #00ffcc;
+  color: #000;
+  padding: 12px 20px;
+  border: none;
+  font-weight: bold;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffcc;
+  transition: 0.3s ease;
+}
+.admin-buttons button:hover {
+  background: #00ccaa;
+  transform: scale(1.05);
 }
 
-/* ===== WHATSAPP BUTTON ===== */
+/* ===== PREVIEW BLOCKS ===== */
+.preview-block {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.preview-block img {
+  height: 80px;
+  border-radius: 8px;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 8px #00ffcc;
+}
+
+/* ===== PASSWORD OVERLAY (moved to admin.html inline, optional here) ===== */
+#passwordOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#passwordOverlay input {
+  padding: 10px;
+  font-size: 18px;
+  margin: 10px;
+}
+#passwordOverlay button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+/* ===== WHATSAPP FLOAT BUTTON ===== */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
@@ -292,43 +131,17 @@ h1, h2, h3 {
   text-decoration: none;
 }
 
-/* ===== RESPONSIVE MEDIA QUERIES ===== */
+/* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-  .main-title {
-    font-size: 2rem;
+  .admin-section {
+    margin: 10px;
+    padding: 15px;
   }
-  .gallery img,
-  .testimonial-row img {
-    width: 100px;
-  }
-  .cta a {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-  .map-block iframe {
+  .admin-buttons button {
     width: 100%;
+    margin: 10px 0;
   }
-}
-
-/* ✅ MOBILE FRIENDLY LAYOUT */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-    text-align: center;
-  }
-  .main-title, .subtitle, .cta h2, .cta p {
-    text-align: center;
-    font-size: 1.1rem;
-  }
-  .gallery img {
-    width: 100%;
-    height: auto;
-  }
-  .testimonial-row {
-    flex-direction: column;
-    align-items: center;
-  }
-  .offer-bar {
-    font-size: 0.9rem;
+  .preview-block img {
+    height: 60px;
   }
 }
