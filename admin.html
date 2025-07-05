@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Trading Hub Academy</title>
+  <link rel="stylesheet" href="admin-style.css" />
+  <style>
+    /* 🔐 Password Overlay Style */
+    #passwordOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #passwordOverlay input {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    #passwordOverlay button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🔐 PASSWORD OVERLAY -->
+<div id="passwordOverlay">
+  <h2>🔐 Admin Access</h2>
+  <p>कृपया पासवर्ड टाका:</p>
+  <input type="password" id="adminPassword" placeholder="Enter Password" />
+  <button onclick="verifyPassword()">Login</button>
+  <p id="passError" style="color: red;"></p>
+</div>
+
+<!-- ✅ ADMIN CONTENT STARTS -->
+<div id="adminContent" class="hidden">
+  <h1>🔧 Admin Panel - Website Control</h1>
+
+  <!-- 🔥 Offer Text -->
+  <section class="admin-section">
+    <h2>🔥 Offer Text</h2>
+    <textarea rows="2" id="offerText">🔥 मर्यादित कालावधीसाठी खास ऑफर – आजच नाव नोंदवा! 🔥</textarea>
+  </section>
+
+  <!-- 🎓 Main Heading / Subheading -->
+  <section class="admin-section">
+    <h2>🎓 Main Heading / Subheading</h2>
+    <input type="text" id="mainHeading" value="🚀 TRADING HUB ACADEMY 🚀" />
+    <input type="text" id="subHeading" value="शेअर मार्केट शिकायचंय, पण कुठून सुरूवात करावी – समजत नाही?" />
+  </section>
+
+  <!-- 📚 Course Syllabus -->
+  <section class="admin-section">
+    <h2>📚 Course Syllabus</h2>
+    <textarea rows="10" id="courseDetails">
+📌 Candlestick Basics
+📊 Chart Patterns – Triangle, Flag, Double Top/Bottom
+📍 Demand-Supply Zones
+📈 Indicators – RSI, MACD, Moving Averages
+🎯 Entry-Exit + Stoploss
+🔄 Strategies – Straddle, Strangle, Iron Condor
+🧠 Smart Money Concept
+📈 Price Action + Risk to Reward Ratio
+💱 Forex Trading Basics
+📘 Option Greeks
+🔁 Change of Character (CHoCH)
+⚠️ Fair Value Gaps (FVG)
+📈 Market Structure – HH, HL, LH, LL
+🧭 Entry Traps
+    </textarea>
+  </section>
+
+  <!-- 📍 Address -->
+  <section class="admin-section">
+    <h2>📍 Address (Location)</h2>
+    <textarea rows="4" id="addressBlock">
+"No.1, Share Market Class", TRADING HUB ACADEMY,
+Tange Galli, near Jankalyan Raktpedhi,
+Satpute Wada, Nalegaon, Ahmednagar, Maharashtra 414001
+    </textarea>
+    <label>📍 Google Maps Link:</label>
+    <input type="text" id="mapLink" value="https://maps.app.goo.gl/iHJEuNRdtZTHpyVQ9" />
+  </section>
+
+  <!-- 📞 WhatsApp / Email -->
+  <section class="admin-section">
+    <h2>📞 WhatsApp / Email / Website</h2>
+    <label>WhatsApp Number:</label>
+    <input type="text" id="whatsappNumber" value="918888721680" />
+    <label>Email ID:</label>
+    <input type="email" id="email" value="tradinghubacademy@gmail.com" />
+    <label>Website URL:</label>
+    <input type="text" id="websiteUrl" value="www.tradinghubacademy.in" />
+  </section>
+
+  <!-- 🖼️ Logo + Gallery Upload -->
+  <section class="admin-section">
+    <h2>🖼️ Upload Logo & Gallery Images</h2>
+
+    <label>🔰 Upload Logo:</label>
+    <input type="file" id="logoUpload" accept="image/*" onchange="previewImage(this, 'logoPreview')" />
+    <div class="preview-block">
+      <img id="logoPreview" src="images/tradinghub-logo.png" alt="Logo Preview" height="100">
+    </div>
+
+    <label>📸 Upload Gallery Images (3):</label>
+    <input type="file" multiple accept="image/*" id="galleryUpload" onchange="previewGallery(this)" />
+    <div class="preview-block" id="galleryPreview"></div>
+  </section>
+
+  <!-- 🌟 Testimonials -->
+  <section class="admin-section">
+    <h2>🌟 Testimonial Images (5)</h2>
+    <input type="file" multiple accept="image/*" />
+    <p>💡 Tip: Upload 5 square photos of students.</p>
+  </section>
+
+  <!-- 💾 Action Buttons -->
+  <div class="admin-buttons">
+    <button onclick="saveChanges()">💾 Save Changes</button>
+    <button onclick="previewWebsite()">👁️ Preview Website</button>
+  </div>
+</div>
+
+<!-- 🔧 Scripts -->
+<script>
+  // Password Logic
+  function verifyPassword() {
+    const password = document.getElementById("adminPassword").value;
+    const correct = "trading123"; // Change password here
+    if (password === correct) {
+      document.getElementById("passwordOverlay").style.display = "none";
+      document.getElementById("adminContent").classList.remove("hidden");
+    } else {
+      document.getElementById("passError").innerText = "❌ चुकीचा पासवर्ड!";
+    }
+  }
+
+  // Image Preview Functions
+  function previewImage(input, previewId) {
+    const file = input.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById(previewId).src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function previewGallery(input) {
+    const files = input.files;
+    const galleryDiv = document.getElementById('galleryPreview');
+    galleryDiv.innerHTML = '';
+    Array.from(files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.height = 80;
+        img.style.margin = '5px';
+        galleryDiv.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Save / Preview (Future use)
+  function saveChanges() {
+    alert("🔐 Save functionality backend जोडल्यावर Activate होईल.");
+  }
+
+  function previewWebsite() {
+    window.open("index.html", "_blank");
+  }
+</script>
+</body>
+</html>
