@@ -3,11 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(ellipse at center, #111 0%, #000 100%), url('images/chart-lines.png');
-  background-size: cover;
-  background-blend-mode: overlay;
+  background: #0a0a0a url('https://i.imgur.com/sP3jFwT.png') repeat;
+  background-size: contain;
   color: #fff;
 }
+
 
 a {
   text-decoration: none;
@@ -19,20 +19,23 @@ h1, h2, h3 {
 
 /* ===== OFFER BAR ===== */
 .offer-bar {
-  background: red;
-  color: yellow;
+  background: linear-gradient(to right, #00ffcc, #0099ff);
+  color: #000;
   font-weight: bold;
-  padding: 10px 0;
+  font-size: 1rem;
+  padding: 12px 0;
   text-align: center;
-  animation: blink 1s infinite alternate, scroll 15s linear infinite;
-  white-space: nowrap;
-  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  animation: slidein 15s linear infinite;
 }
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
+@keyframes slidein {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
+
 @keyframes scroll {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
@@ -45,11 +48,13 @@ h1, h2, h3 {
   padding: 20px 0;
 }
 .logo {
-  width: 140px;
+  width: 120px;
   height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #0f0;
+  border-radius: 20px;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.6);
 }
+
 
 /* ===== MAIN TITLE ===== */
 .main-title {
@@ -65,7 +70,11 @@ h1, h2, h3 {
   padding: 10px;
 }
 .blinking {
-  animation: blink 1s infinite;
+  animation: blinkSoft 1.5s infinite ease-in-out;
+}
+@keyframes blinkSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 /* ===== INTRO SECTION ===== */
