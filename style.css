@@ -3,10 +3,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #000000, #1a1a1a, #000000);
+  background: radial-gradient(ellipse at center, #111 0%, #000 100%), url('images/chart-lines.png');
+  background-size: cover;
+  background-blend-mode: overlay;
   color: #fff;
-  scroll-behavior: smooth;
 }
+
 a {
   text-decoration: none;
   color: #00ffcc;
