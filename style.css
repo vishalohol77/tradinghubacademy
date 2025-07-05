@@ -49,12 +49,12 @@ h1, h2, h3 {
 }
 .logo {
   width: 120px;
-  height: auto;
-  border-radius: 20px;
+  height: 120px;
+  border-radius: 0; /* गोलपणा हटवला */
   border: 2px solid #00ffcc;
+  object-fit: cover;
   box-shadow: 0 0 10px rgba(0, 255, 200, 0.6);
 }
-
 
 /* ===== MAIN TITLE ===== */
 .main-title {
@@ -306,6 +306,33 @@ h1, h2, h3 {
   }
   .map-block iframe {
     width: 100%;
+  }
+}
+
+/* ✅ MOBILE FRIENDLY LAYOUT */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .main-title, .subtitle, .cta h2, .cta p {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  .testimonial-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer-bar {
+    font-size: 0.9rem;
   }
 }
 
