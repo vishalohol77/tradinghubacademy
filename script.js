@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Optional Console Log
-  console.log("Website Loaded - TRADING HUB ACADEMY");
+  // ✅ Confirm site loaded
+  console.log("✅ TRADING HUB ACADEMY Website Loaded");
 
-  // 🔁 GALLERY AUTO SLIDER (Optional – enables one-by-one image display)
+  // 🔁 AUTO GALLERY SLIDER (show one image at a time)
   const galleryImages = document.querySelectorAll(".gallery img");
   let currentIndex = 0;
 
   if (galleryImages.length > 1) {
+    galleryImages.forEach((img, i) => {
+      img.style.display = i === 0 ? "block" : "none";
+    });
+
     setInterval(() => {
       galleryImages.forEach((img, i) => {
         img.style.display = i === currentIndex ? "block" : "none";
@@ -15,15 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3000);
   }
 
-  // 📲 WHATSAPP BUTTON HOVER EFFECT
+  // 📲 WHATSAPP BUTTON INTERACTION
   const whatsappBtn = document.querySelector(".whatsapp-button");
   if (whatsappBtn) {
     whatsappBtn.addEventListener("mouseenter", () => {
-      console.log("🟢 WhatsApp Button Hovered");
+      console.log("🟢 Hovered on WhatsApp Button");
     });
     whatsappBtn.addEventListener("click", () => {
-      console.log("🟢 WhatsApp Button Clicked");
+      console.log("✅ WhatsApp Contact Clicked");
     });
   }
-});
 
+  // 💡 SCROLL ANIMATION placeholder (for future use)
+  window.addEventListener("scroll", () => {
+    // Placeholder for future scroll-based effects
+  });
+});
