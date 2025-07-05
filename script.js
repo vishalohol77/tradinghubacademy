@@ -1,154 +1,176 @@
-/* ===== Global Styling ===== */
+/* GENERAL */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #000;
-  color: #fff;
-  scroll-behavior: smooth;
+  background-color: #0d1117;
+  color: white;
+  overflow-x: hidden;
 }
-h1, h2, h3, p {
-  margin: 10px 0;
-  text-align: center;
-}
-a {
-  color: #0f0;
-  text-decoration: none;
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* ===== Offer Strip (Top Scrolling) ===== */
-.offer-strip {
-  background: red;
-  color: yellow;
+/* OFFER BAR */
+.offer-bar {
+  background: #ff0000;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
-  padding: 10px 0;
-  overflow: hidden;
   white-space: nowrap;
-  animation: scrollText 15s linear infinite;
+  overflow: hidden;
+  animation: scroll-left 15s linear infinite;
 }
-@keyframes scrollText {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-/* ===== Hero Section ===== */
-.hero {
-  background: linear-gradient(145deg, #111, #222);
-  padding: 60px 20px;
-  text-align: center;
-  transform: perspective(1000px) rotateX(3deg);
-}
-.title {
-  font-size: 2.5rem;
-  color: #00ffcc;
-  text-shadow: 2px 2px 5px #000;
-}
-.tagline {
-  font-size: 1.2rem;
-  color: #ccc;
+@keyframes scroll-left {
+  0% {transform: translateX(100%);}
+  100% {transform: translateX(-100%);}
 }
 
-/* ===== Slider ===== */
-.slider {
+/* LOGO */
+.logo-section {
   text-align: center;
   margin: 20px 0;
 }
-.slider img {
-  width: 90%;
-  max-width: 800px;
-  border: 5px solid #00ffcc;
-  border-radius: 10px;
-  box-shadow: 0 0 20px lime;
-  animation: zoomIn 2s ease-in-out;
-}
-@keyframes zoomIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+.logo-section img.logo {
+  max-width: 180px;
+  height: auto;
 }
 
-/* ===== Courses Section ===== */
-.courses {
-  background: #111;
-  padding: 30px 15px;
+/* TITLES */
+.main-title {
+  text-align: center;
+  font-size: 40px;
+  color: #00e676;
+  text-shadow: 0 0 10px #00e676;
 }
-.course-card {
-  background: #222;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  border-left: 5px solid lime;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #0f0;
-  transition: transform 0.3s;
+.subtitle {
+  text-align: center;
+  font-size: 22px;
+  color: #f44336;
 }
-.course-card:hover {
-  transform: scale(1.03);
+.blinking {
+  animation: blink 1.2s infinite;
 }
-.course-card h3 {
-  color: #0ff;
-}
-.course-card ul {
-  list-style-type: none;
-  padding-left: 0;
-  color: #ccc;
+@keyframes blink {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
 }
 
-/* ===== Video Section ===== */
-.video {
-  background: #000;
-  padding: 30px 20px;
+/* INTRO + WARN */
+.intro p {
+  font-size: 18px;
+  line-height: 1.6;
 }
-.video iframe {
-  width: 90%;
-  max-width: 600px;
-  height: 315px;
-  border: none;
-  box-shadow: 0 0 15px #00ffcc;
-}
-
-/* ===== About Trainer ===== */
-.about {
-  background: #111;
-  padding: 30px 20px;
-  font-size: 1rem;
-  color: #ccc;
-}
-
-/* ===== Contact Section ===== */
-.contact {
-  background: #000;
-  padding: 30px 20px;
-  font-size: 1.1rem;
-}
-.contact a {
-  display: inline-block;
-  margin-top: 10px;
+.warn {
+  color: #ffcc00;
   font-weight: bold;
 }
 
-/* ===== Footer ===== */
-footer {
-  background: #111;
-  color: #777;
-  padding: 15px;
-  font-size: 0.9rem;
-  text-align: center;
+/* HIGHLIGHT SECTIONS */
+.highlight-section,
+.syllabus {
+  background-color: #161b22;
+  border-left: 5px solid #00e5ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.highlight-section h3,
+.syllabus h2 {
+  color: #00e5ff;
 }
 
-/* ===== WhatsApp Button (Fixed) ===== */
-.whatsapp-fixed {
+/* LISTS */
+ul {
+  padding-left: 20px;
+}
+ul li {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+li.highlight {
+  color: #ff4081;
+  font-weight: bold;
+}
+
+/* GALLERY */
+.gallery {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gallery img {
+  width: 300px;
+  border-radius: 10px;
+  border: 2px solid #444;
+}
+
+/* CTA SECTION */
+.cta {
+  background: #25D366;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.cta a {
+  background: black;
+  color: #25D366;
+  padding: 10px 25px;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+/* MAP BLOCK */
+.map-block {
+  text-align: center;
+  margin-top: 40px;
+}
+.map-block iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+  border-radius: 10px;
+}
+.map-block a {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #1e90ff;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+  padding: 20px 10px;
+  margin-top: 50px;
+  border-top: 1px solid #444;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-weight: bold;
-  box-shadow: 0 0 10px #25D366;
-  z-index: 1000;
-  transition: 0.3s ease;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 25px;
+  z-index: 999;
 }
-.whatsapp-fixed:hover {
-  transform: scale(1.1);
-  background: #1ebd5a;
+.whatsapp-button a {
+  color: white;
+  text-decoration: none;
 }
