@@ -1,12 +1,36 @@
-// blinking control (optional future dynamic use)
-document.addEventListener("DOMContentLoaded", () => {
-  const blinking = document.querySelectorAll(".blinking");
-  blinking.forEach(el => {
-    el.style.visibility = "visible";
-  });
-});
+// ===== Image Slider Auto Rotation (Optional) =====
+// Use if you convert gallery into slider later
 
-// Scroll animation reserved (for future use)
+// const images = [
+//   'images/class1.jpg',
+//   'images/chart.png',
+//   'images/teacher.jpg'
+// ];
+
+// let current = 0;
+// const galleryImg = document.getElementById("slider-image");
+
+// function rotateImage() {
+//   current = (current + 1) % images.length;
+//   if (galleryImg) galleryImg.src = images[current];
+// }
+// setInterval(rotateImage, 3000); // every 3 sec
+
+// ===== Scroll to Top Button (Future Feature Placeholder) =====
+// const scrollTopBtn = document.getElementById("scrollTopBtn");
+// window.addEventListener("scroll", () => {
+//   scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+// });
+// scrollTopBtn.addEventListener("click", () => {
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// });
+
+// ===== WhatsApp CTA Highlight on Scroll =====
+const whatsappBtn = document.querySelector(".whatsapp-button");
 window.addEventListener("scroll", () => {
-  // Placeholder for animation on scroll (future gallery/fade etc.)
+  if (window.scrollY > 500) {
+    whatsappBtn.style.boxShadow = "0 0 20px lime";
+  } else {
+    whatsappBtn.style.boxShadow = "0 0 10px #25D366";
+  }
 });
