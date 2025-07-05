@@ -1,15 +1,12 @@
-// ===== Auto Image Slider =====
-const images = [
-  'images/slide1.jpg',
-  'images/slide2.jpg',
-  'images/slide3.jpg'
-];
+// blinking control (optional future dynamic use)
+document.addEventListener("DOMContentLoaded", () => {
+  const blinking = document.querySelectorAll(".blinking");
+  blinking.forEach(el => {
+    el.style.visibility = "visible";
+  });
+});
 
-let current = 0;
-const sliderImage = document.getElementById("slider-image");
-
-function changeImage() {
-  current = (current + 1) % images.length;
-  sliderImage.src = images[current];
-}
-setInterval(changeImage, 3000); // every 3 seconds
+// Scroll animation reserved (for future use)
+window.addEventListener("scroll", () => {
+  // Placeholder for animation on scroll (future gallery/fade etc.)
+});
