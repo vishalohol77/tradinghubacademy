@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Trading Hub Academy</title>
+  <link rel="stylesheet" href="admin-style.css" />
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <div class="admin-container">
+    <h1>TRADING HUB ACADEMY - Admin Panel</h1>
+
+    <label>🔥 Offer Text:</label>
+    <input type="text" id="offerText" placeholder="Enter offer text..." />
+
+    <label>🎓 Main Heading:</label>
+    <input type="text" id="mainHeading" placeholder="Main heading..." />
+
+    <label>📞 WhatsApp Number:</label>
+    <input type="text" id="whatsappNumber" placeholder="e.g. 918888721680" />
+
+    <label>📄 Course Details (comma separated):</label>
+    <textarea id="courseDetails"></textarea>
+
+    <label>🖼️ Upload Logo Image:</label>
+    <input type="file" id="logoFile" accept="image/*" />
+
+    <label>🌄 Upload Background Image:</label>
+    <input type="file" id="bgFile" accept="image/*" />
+
+    <label>📍 Location:</label>
+    <textarea id="locationText"></textarea>
+
+    <label>🌐 Google Maps Embed URL:</label>
+    <input type="text" id="mapUrl" />
+
+    <label>🔚 Footer Info:</label>
+    <textarea id="footerInfo"></textarea>
+
+    <button onclick="generateCode()">Generate HTML Code</button>
+    <textarea id="outputCode" rows="20" readonly></textarea>
+    <button onclick="copyCode()">Copy Code</button>
+  </div>
+</body>
+</html>
