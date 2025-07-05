@@ -40,3 +40,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // 🔐 OPTIONAL: Future Login Authentication can go here
 
 });
+
+document.addEventListener("DOMContentLoaded", function () { 
+  console.log("✅ TRADING HUB ACADEMY Website Loaded");
+
+  const galleryImages = document.querySelectorAll(".gallery img");
+  let currentIndex = 0;
+
+  if (galleryImages.length > 1) {
+    galleryImages.forEach((img, i) => {
+      img.style.display = i === 0 ? "block" : "none";
+    });
+
+    setInterval(() => {
+      galleryImages.forEach((img, i) => {
+        img.style.display = i === currentIndex ? "block" : "none";
+      });
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+    }, 3000);
+  }
+
+  const whatsappBtn = document.querySelector(".whatsapp-button");
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener("mouseenter", () => {
+      console.log("🟢 Hovered on WhatsApp Button");
+    });
+    whatsappBtn.addEventListener("click", () => {
+      console.log("✅ WhatsApp Contact Clicked");
+    });
+  }
+});
