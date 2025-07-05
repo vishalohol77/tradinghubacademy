@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // ✅ Confirm site loaded
-  console.log("✅ TRADING HUB ACADEMY Website Loaded");
+// ✅ Website JS for Trading Hub Academy
 
-  // 🔁 AUTO GALLERY SLIDER (show one image at a time)
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("🚀 Trading Hub Academy Website Loaded");
+
+  // 🔁 Auto Gallery Slider
   const galleryImages = document.querySelectorAll(".gallery img");
   let currentIndex = 0;
 
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3000);
   }
 
-  // 📲 WHATSAPP BUTTON INTERACTION
+  // 📲 WhatsApp Button Interaction
   const whatsappBtn = document.querySelector(".whatsapp-button");
   if (whatsappBtn) {
     whatsappBtn.addEventListener("mouseenter", () => {
@@ -30,8 +31,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 💡 SCROLL ANIMATION placeholder (for future use)
-  window.addEventListener("scroll", () => {
-    // Placeholder for future scroll-based effects
+  // 🔦 Highlight visible sections (optional scroll-based effect)
+  const highlightSections = document.querySelectorAll(".highlight-section li, .syllabus li");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transition = '0.5s';
+        entry.target.style.transform = 'translateX(0)';
+        entry.target.style.opacity = 1;
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  highlightSections.forEach(item => {
+    item.style.transform = 'translateX(-20px)';
+    item.style.opacity = 0;
+    observer.observe(item);
   });
 });
