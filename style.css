@@ -1,108 +1,104 @@
+
 /* ===== GLOBAL STYLES ===== */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0f0f0f;
+  background: #000; /* fallback */
   color: #fff;
-  line-height: 1.6;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+a {
+  color: #00ffcc;
+  text-decoration: none;
 }
 
-/* ===== OFFER BAR ===== */
+ul {
+  padding-left: 20px;
+}
+
+/* 🔥 OFFER BAR */
 .offer-bar {
-  background: linear-gradient(to right, #ff0000, #ff9900);
+  background: #ff0033;
   color: #fff;
-  text-align: center;
   padding: 10px;
+  text-align: center;
   font-weight: bold;
   animation: blink 1s infinite;
 }
 
-/* ===== LOGO SECTION ===== */
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* 🖼️ LOGO */
 .logo-section {
   text-align: center;
-  margin: 20px 0;
+  padding: 10px;
+  background-color: #111;
 }
+
 .logo {
-  width: 140px;
+  max-width: 100%;
   height: auto;
-  display: block;
-  margin: 10px auto;
 }
 
-
-/* ===== MAIN TITLE ===== */
-.main-title {
-  text-align: center;
-  font-size: 2rem;
-  margin: 10px 0;
-  color: #ffcc00;
-  text-shadow: 0 0 10px red;
-}
-.subtitle {
-  text-align: center;
-  color: #ccc;
-  font-style: italic;
-}
-
-/* ===== INTRO TEXT ===== */
-.intro {
-  margin-top: 20px;
-  background: #1a1a1a;
-  padding: 15px;
-  border-left: 4px solid #ffcc00;
-  border-radius: 10px;
-}
-.warn {
-  color: #ff4444;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-/* ===== SYLLABUS ===== */
-.syllabus, .highlight-section {
-  margin-top: 30px;
-  background: #121212;
+/* 🔁 HEADINGS */
+.container {
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-}
-.highlight-section ul, .syllabus ul {
-  list-style: none;
-  padding: 0;
-}
-.syllabus li, .highlight-section li {
-  margin: 10px 0;
-}
-.highlight {
-  color: #00ffcc;
-  font-weight: bold;
-}
-.heading-3d {
-  font-size: 1.6rem;
-  color: gold;
-  text-shadow: 0 0 10px orange;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
 }
 
-/* ===== GALLERY (Empty but Reserved) ===== */
-.gallery {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+.main-title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #00ffcc;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* INTRO & SYLLABUS */
+.intro {
+  text-align: left;
+  margin: 30px 0;
+}
+
+.warn {
+  color: yellow;
+  font-weight: bold;
+}
+
+.highlight-section, .syllabus {
+  text-align: left;
+  margin: 30px 0;
+}
+
+.highlight-section .heading-3d {
+  font-size: 1.5rem;
+  color: #0ff;
+  text-shadow: 1px 1px 5px #0ff;
+}
+
+.syllabus ul li.highlight {
+  color: #0ff;
+  font-weight: bold;
+}
+
+/* 🖼️ GALLERY / TESTIMONIALS */
+.testimonials {
+  margin: 40px 0;
+  text-align: center;
 }
 
 .testimonial-slider-container {
   position: relative;
-  width: 100%;
-  max-width: 200px; /* Size वाढवले */
-  margin: auto;
   overflow: hidden;
 }
 
@@ -112,229 +108,127 @@ body {
 }
 
 .testimonial-slider img {
-  min-width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 0;
-  border: 3px solid #25D366;
-  box-shadow: 0 0 10px rgba(0, 255, 128, 0.5);
+  width: 100%;
+  max-width: 250px;
+  margin: 10px;
+  border-radius: 12px;
+  border: 2px solid #0ff;
 }
 
-/* Navigation buttons */
 .nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
+  background: transparent;
   border: none;
-  padding: 6px 12px;
+  font-size: 2rem;
+  color: #0ff;
   cursor: pointer;
-  z-index: 2;
-  border-radius: 5px;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
 }
-.nav.prev { left: -30px; }
-.nav.next { right: -30px; }
 
-/* ===== CTA ===== */
-.cta {
-  margin-top: 30px;
-  background: #222;
-  padding: 20px;
-  border-left: 5px solid #25D366;
-  border-radius: 10px;
-  text-align: center;
+.prev {
+  left: 0;
 }
+
+.next {
+  right: 0;
+}
+
+/* 📞 CTA */
+.cta {
+  background: #0ff2;
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+  border-radius: 12px;
+}
+
 .cta a {
-  background: #25D366;
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 8px;
   display: inline-block;
   margin-top: 10px;
+  background: #00ffcc;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 25px;
 }
 
-/* ===== MAP BLOCK ===== */
+/* 📍 LOCATION */
 .map-block {
-  margin-top: 30px;
-  background: #1b1b1b;
-  padding: 20px;
-  border-radius: 10px;
+  margin: 30px 0;
+  text-align: center;
 }
+
 .map-block iframe {
   width: 100%;
   height: 300px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-/* ===== FOOTER ===== */
+/* 🔚 FOOTER */
 .footer {
-  margin-top: 40px;
-  padding: 15px;
+  background: #111;
+  padding: 10px;
   text-align: center;
   font-size: 0.9rem;
-  background: #000;
-  color: #aaa;
 }
 
-/* ===== BLINKING EFFECT ===== */
-.blinking, .blink-highlight {
-  animation: blink 1.2s infinite;
-}
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
-}
-.blink-highlight {
-  color: yellow;
-  font-weight: bold;
-  text-shadow: 0 0 10px red;
-}
-
-/* ===== WHATSAPP BUTTON (FIXED) ===== */
+/* 📲 WHATSAPP */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 999;
-  background-color: #25D366;
-  padding: 12px 16px;
-  border-radius: 50px;
-  animation: blink 1.2s infinite;
-  box-shadow: 0 0 12px #25D366;
-}
-.whatsapp-button a {
-  color: white;
-  font-size: 24px;
-  text-decoration: none;
 }
 
-/* ===== POPUP OFFER ===== */
-.popup {
-  display: none;
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #1e1e1e;
-  color: white;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 0 20px gold;
-  z-index: 9999;
-}
-.popup .popup-btn {
-  display: inline-block;
-  margin-top: 12px;
+.whatsapp-button a {
+  font-size: 2rem;
   background: #25D366;
   color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 0 10px #25D366;
 }
 
-/* ===== RESPONSIVE STYLES ===== */
-@media (max-width: 600px) {
-  .main-title {
-    font-size: 1.5rem;
-  }
-  .logo {
-    width: 90px;
-  }
-  .cta, .map-block, .syllabus, .highlight-section {
-    padding: 10px;
-  }
-  .testimonial-row img {
-    width: 80px;
-    height: 80px;
-  }
-}
+/* 💬 POPUP */
 .popup {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #1e1e1e;
-  color: white;
-  padding: 25px;
+  background: #111;
+  color: #fff;
+  padding: 20px;
   border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 0 20px gold;
-  z-index: 9999;
-  width: 280px;
-  max-width: 90%;
-}
-
-
+  border: 2px solid #0ff;
+  z-index: 1000;
 }
 
 .popup-close {
   position: absolute;
   top: 5px;
-  right: 8px;
-  font-size: 20px;
-  font-weight: bold;
+  right: 10px;
   cursor: pointer;
-  color: #ff4444;
 }
 
-.popup .popup-btn {
+.popup-btn {
+  margin-top: 10px;
   display: inline-block;
-  margin-top: 12px;
-  background: #25D366;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+  background: #0ff;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 10px;
 }
 
-.testimonial-slider-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 300px; /* Mobile-friendly size */
-  margin: 30px auto;
-}
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+  .testimonial-slider {
+    flex-direction: row;
+    overflow-x: auto;
+  }
 
-.testimonial-slider {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
-
-.testimonial-slider img {
-  flex: 0 0 100%;
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-  border: 4px double #25D366;
-  box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
-  object-fit: cover;
-}
-
-/* Navigation Buttons */
-.nav {
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 6px;
-  z-index: 2;
-}
-.nav.prev {
-  left: 5px;
-}
-.nav.next {
-  right: 5px;
+  .testimonial-slider img {
+    min-width: 80%;
+  }
 }
