@@ -47,35 +47,27 @@ function closePopup() {
   if (popup) popup.style.display = 'none';
   localStorage.setItem('popupClosed', 'true');
 }
-
-// 🔄 Testimonial Slider Controls
 let slideIndex = 0;
-let slider;
-let interval;
+let autoSlideInterval;
+
+window.addEventListener('DOMContentLoaded', () => {
+  startAutoSlide();
+});
 
 function moveSlide(step) {
+  const slider = document.getElementById("testimonialSlider");
   const totalSlides = slider.children.length;
   slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-  updateSlide();
+  updateSlider();
+}
+
+function updateSlider() {
+  const slider = document.getElementById("testimonialSlider");
+  slider.style.transform = `translateX(-${slideIndex * 100}%)`;
 }
 
 function startAutoSlide() {
-  interval = setInterval(() => {
+  autoSlideInterval = setInterval(() => {
     moveSlide(1);
   }, 4000);
-}
-
-function stopAutoSlide() {
-  clearInterval(interval);
-}
-
-function updateSlide() {
-  const offset = slideIndex * (160 + 20); // 160px image + 20px gap
-  slider.style.transform = `translateX(-${offset}px)`;
-}
-
-// 🔧 Placeholder for Admin Panel Content Sync
-function updateContentFromAdmin(data) {
-  // Future use:
-  // document.querySelector('.main-title').textContent = data.title;
 }
