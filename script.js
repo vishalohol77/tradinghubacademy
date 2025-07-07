@@ -7,13 +7,36 @@ window.addEventListener('DOMContentLoaded', () => {
       if (popup) popup.style.display = 'block';
     }, 3000);
   }
+// ✅ Testimonial Slider Logic
+let slideIndex = 0;
+let testimonialSlider;
+let autoSlideInterval;
 
-  // 🔁 Start testimonial auto-slide
-  slider = document.getElementById("testimonialSlider");
+window.addEventListener("DOMContentLoaded", () => {
+  testimonialSlider = document.getElementById("testimonialSlider");
   startAutoSlide();
-  slider.addEventListener("mouseenter", stopAutoSlide);
-  slider.addEventListener("mouseleave", startAutoSlide);
+  testimonialSlider.addEventListener("mouseenter", stopAutoSlide);
+  testimonialSlider.addEventListener("mouseleave", startAutoSlide);
 });
+
+function moveSlide(step) {
+  const totalSlides = testimonialSlider.children.length;
+  slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+  updateTestimonialSlide();
+}
+
+function updateTestimonialSlide() {
+  const offset = slideIndex * 100; // 100% width per image
+  testimonialSlider.style.transform = `translateX(-${offset}%)`;
+}
+
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => moveSlide(1), 4000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
 
 // ❌ Close Popup + Don't show again
 function closePopup() {
