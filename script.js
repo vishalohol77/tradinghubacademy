@@ -7,7 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
       if (popup) popup.style.display = 'block';
     }, 3000);
   }
-// ✅ Testimonial Slider Logic
 let slideIndex = 0;
 let testimonialSlider;
 let autoSlideInterval;
@@ -15,6 +14,7 @@ let autoSlideInterval;
 window.addEventListener("DOMContentLoaded", () => {
   testimonialSlider = document.getElementById("testimonialSlider");
   startAutoSlide();
+
   testimonialSlider.addEventListener("mouseenter", stopAutoSlide);
   testimonialSlider.addEventListener("mouseleave", startAutoSlide);
 });
@@ -26,17 +26,20 @@ function moveSlide(step) {
 }
 
 function updateTestimonialSlide() {
-  const offset = slideIndex * 100; // 100% width per image
+  const offset = slideIndex * 100;
   testimonialSlider.style.transform = `translateX(-${offset}%)`;
 }
 
 function startAutoSlide() {
-  autoSlideInterval = setInterval(() => moveSlide(1), 4000);
+  autoSlideInterval = setInterval(() => {
+    moveSlide(1);
+  }, 3000); // every 3 seconds
 }
 
 function stopAutoSlide() {
   clearInterval(autoSlideInterval);
 }
+
 
 // ❌ Close Popup + Don't show again
 function closePopup() {
