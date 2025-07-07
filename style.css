@@ -234,25 +234,26 @@ body {
 .popup {
   display: none;
   position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20px;
+  right: 20px;
   background: #1e1e1e;
   color: white;
-  padding: 25px;
-  border-radius: 15px;
+  padding: 20px 25px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 15px gold;
   z-index: 9999;
+  width: 260px;
 }
 
 .popup-close {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  top: 5px;
+  right: 8px;
   font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
-  color: red;
+  color: #ff4444;
 }
 
 .popup .popup-btn {
@@ -260,7 +261,8 @@ body {
   margin-top: 12px;
   background: #25D366;
   color: white;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
 }
