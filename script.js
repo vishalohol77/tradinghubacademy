@@ -47,27 +47,38 @@ function closePopup() {
   if (popup) popup.style.display = 'none';
   localStorage.setItem('popupClosed', 'true');
 }
-let slideIndex = 0;
-const slideWidth = 170; // 160px image + 10px margin
 
-window.addEventListener('DOMContentLoaded', () => {
-  startAutoSlide();
-});
+ let slideIndex = 0;
+let interval;
+const slider = document.getElementById("testimonialSlider");
 
 function moveSlide(step) {
-  const slider = document.getElementById("testimonialSlider");
-  const totalSlides = slider.children.length;
-  slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+  const images = slider.querySelectorAll("img");
+  slideIndex = (slideIndex + step + images.length) % images.length;
   updateSlider();
 }
 
 function updateSlider() {
-  const slider = document.getElementById("testimonialSlider");
+  const img = slider.querySelector("img");
+  const slideWidth = img.offsetWidth + 20; // image + margin
   slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
 }
 
-function startAutoSlide() {
-  setInterval(() => {
-    moveSlide(1);
-  }, 3000);
+function autoSlide() {
+  moveSlide(1);
 }
+
+// Auto slide every 3s
+interval = setInterval(autoSlide, 3000);
+
+// Pause on hover
+slider.addEventListener("mouseenter", () => clearInterval(interval));
+slider.addEventListener("mouseleave", () => {
+  interval = setInterval(autoSlide, 3000);
+});
+
+// Init on page load
+window.addEventListener("DOMContentLoaded", () => {
+  updateSlider();
+});
+                       
