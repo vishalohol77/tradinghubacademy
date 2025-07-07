@@ -30,10 +30,12 @@ body {
   margin: 20px 0;
 }
 .logo {
-  width: 120px;
+  width: 140px;
   height: auto;
-  filter: drop-shadow(0 0 5px yellow);
+  display: block;
+  margin: 10px auto;
 }
+
 
 /* ===== MAIN TITLE ===== */
 .main-title {
