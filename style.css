@@ -234,16 +234,19 @@ body {
 .popup {
   display: none;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #1e1e1e;
   color: white;
-  padding: 20px 25px;
-  border-radius: 12px;
+  padding: 25px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 0 15px gold;
+  box-shadow: 0 0 20px gold;
   z-index: 9999;
-  width: 260px;
+  width: 280px;
+}
+
 }
 
 .popup-close {
