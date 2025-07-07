@@ -245,7 +245,9 @@ body {
   box-shadow: 0 0 20px gold;
   z-index: 9999;
   width: 280px;
+  max-width: 90%;
 }
+
 
 }
 
