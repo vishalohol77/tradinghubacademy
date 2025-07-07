@@ -267,45 +267,53 @@ body {
   font-weight: bold;
 }
 
-/* ===== TESTIMONIALS SLIDER ===== */
+/* ===== TESTIMONIALS SECTION ===== */
 .testimonials {
   margin-top: 40px;
   text-align: center;
 }
 
-.testimonial-slider {
+.testimonial-slider-container {
+  position: relative;
   overflow: hidden;
-  width: 100%;
   max-width: 100%;
   margin: auto;
+  padding: 10px 40px;
 }
 
-.testimonial-track {
+.testimonial-slider {
   display: flex;
-  gap: 10px;
-  animation: scrollSlide 20s linear infinite;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+  width: max-content;
 }
 
-.testimonial-track img {
-  width: 120px;
-  height: 120px;
+.testimonial-slider img {
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid #25D366;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 3px solid #25D366;
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.5);
 }
 
-/* Slide Animation */
-@keyframes scrollSlide {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Navigation Buttons */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 5px;
 }
-
-/* Pause on Hover */
-.testimonial-slider:hover .testimonial-track {
-  animation-play-state: paused;
+.nav.prev {
+  left: 5px;
+}
+.nav.next {
+  right: 5px;
 }
