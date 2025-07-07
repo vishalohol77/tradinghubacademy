@@ -266,3 +266,46 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
+
+/* ===== TESTIMONIALS SLIDER ===== */
+.testimonials {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.testimonial-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 10px;
+  animation: scrollSlide 20s linear infinite;
+}
+
+.testimonial-track img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #25D366;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Slide Animation */
+@keyframes scrollSlide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on Hover */
+.testimonial-slider:hover .testimonial-track {
+  animation-play-state: paused;
+}
