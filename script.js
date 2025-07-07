@@ -48,7 +48,7 @@ function closePopup() {
   localStorage.setItem('popupClosed', 'true');
 }
 let slideIndex = 0;
-let autoSlideInterval;
+const slideWidth = 170; // 160px image + 10px margin
 
 window.addEventListener('DOMContentLoaded', () => {
   startAutoSlide();
@@ -63,11 +63,11 @@ function moveSlide(step) {
 
 function updateSlider() {
   const slider = document.getElementById("testimonialSlider");
-  slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+  slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
 }
 
 function startAutoSlide() {
-  autoSlideInterval = setInterval(() => {
+  setInterval(() => {
     moveSlide(1);
-  }, 4000);
+  }, 3000);
 }
