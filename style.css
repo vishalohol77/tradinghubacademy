@@ -302,45 +302,53 @@ body {
 
 .testimonial-slider-container {
   position: relative;
-  max-width: 100%;
   overflow: hidden;
-  margin: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .testimonial-slider {
   display: flex;
-  transition: transform 0.4s ease-in-out;
-  width: 100%;
+  transition: transform 0.5s ease-in-out;
+  width: 500%;
 }
 
-.testimonial-slider img {
-  width: 100vw;
-  max-width: 100%;
-  height: 100vw;
-  max-height: 100vw;
+.testimonial-item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-item img {
+  width: 90vw;
+  height: 90vw;
+  max-width: 300px;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 10px;
-  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.4);
 }
 
-/* Navigation Buttons */
+/* Navigation buttons */
 .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 26px;
+  font-size: 24px;
   background: rgba(0, 0, 0, 0.6);
   color: white;
   border: none;
-  padding: 10px 14px;
+  padding: 8px 12px;
   cursor: pointer;
-  z-index: 2;
-  border-radius: 50%;
+  z-index: 1;
+  border-radius: 5px;
 }
 
 .nav.prev {
   left: 10px;
 }
+
 .nav.next {
   right: 10px;
 }
