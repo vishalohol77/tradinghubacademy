@@ -48,37 +48,36 @@ function closePopup() {
   localStorage.setItem('popupClosed', 'true');
 }
 
- let slideIndex = 0;
-let interval;
+     let slideIndex = 0;
+let autoInterval;
 const slider = document.getElementById("testimonialSlider");
+const images = slider.querySelectorAll("img");
+
+function updateSlider() {
+  const slideWidth = slider.clientWidth;
+  slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
 
 function moveSlide(step) {
-  const images = slider.querySelectorAll("img");
   slideIndex = (slideIndex + step + images.length) % images.length;
   updateSlider();
 }
 
-function updateSlider() {
-  const img = slider.querySelector("img");
-  const slideWidth = img.offsetWidth + 20; // image + margin
-  slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+function startAutoSlide() {
+  autoInterval = setInterval(() => {
+    moveSlide(1);
+  }, 3000);
 }
 
-function autoSlide() {
-  moveSlide(1);
+function stopAutoSlide() {
+  clearInterval(autoInterval);
 }
 
-// Auto slide every 3s
-interval = setInterval(autoSlide, 3000);
-
-// Pause on hover
-slider.addEventListener("mouseenter", () => clearInterval(interval));
-slider.addEventListener("mouseleave", () => {
-  interval = setInterval(autoSlide, 3000);
-});
-
-// Init on page load
+// Start on load
 window.addEventListener("DOMContentLoaded", () => {
   updateSlider();
+  startAutoSlide();
+  slider.addEventListener("mouseenter", stopAutoSlide);
+  slider.addEventListener("mouseleave", startAutoSlide);
 });
-                       
+
