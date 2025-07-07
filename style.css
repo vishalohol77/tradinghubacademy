@@ -295,52 +295,42 @@ body {
   font-weight: bold;
 }
 
-.testimonials {
-  text-align: center;
-  margin-top: 40px;
-}
-
 .testimonial-slider-container {
   position: relative;
   overflow: hidden;
-  padding: 10px 40px;
-  max-width: 100%;
-  margin: auto;
+  width: 100%;
+  max-width: 300px; /* Mobile-friendly size */
+  margin: 30px auto;
 }
 
 .testimonial-slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
+  transition: transform 0.4s ease-in-out;
 }
 
 .testimonial-slider img {
-  width: 22vw;
-  height: 22vw;
-  max-width: 160px;
-  max-height: 160px;
-  min-width: 80px;
-  min-height: 80px;
-  object-fit: cover;
-  border-radius: 16px;
-  margin: 0 10px;
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
   border: 4px double #25D366;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
+  object-fit: cover;
 }
 
 /* Navigation Buttons */
 .nav {
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
-  font-size: 24px;
   background: rgba(0, 0, 0, 0.6);
-  color: white;
+  color: #fff;
   border: none;
-  padding: 8px 12px;
+  padding: 6px 12px;
+  font-size: 20px;
   cursor: pointer;
-  z-index: 1;
-  border-radius: 5px;
+  border-radius: 6px;
+  z-index: 2;
 }
 .nav.prev {
   left: 5px;
