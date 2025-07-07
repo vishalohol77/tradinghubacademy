@@ -1,13 +1,17 @@
-// 📢 Show Popup after 3 seconds
+// 📢 Show Popup if not already closed
 window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const popup = document.getElementById('offerPopup');
-    if (popup) popup.style.display = 'block';
-  }, 3000);
+  const popupClosed = localStorage.getItem('popupClosed');
+  if (!popupClosed) {
+    setTimeout(() => {
+      const popup = document.getElementById('offerPopup');
+      if (popup) popup.style.display = 'block';
+    }, 3000);
+  }
 });
 
-// ✅ Placeholder for future admin-panel data (Firebase/Local Update)
-function updateContentFromAdmin(data) {
-  // Example (future): document.querySelector('.main-title').textContent = data.title;
-  // This function can be extended to sync dynamic content.
+// ❌ Close Popup + Don't show again
+function closePopup() {
+  const popup = document.getElementById('offerPopup');
+  if (popup) popup.style.display = 'none';
+  localStorage.setItem('popupClosed', 'true');
 }
